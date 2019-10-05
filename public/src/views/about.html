@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>About</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+  .about {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 87vh;
+    font-size: 1.5em;
+    justify-content: center;
+  }
+  .about p {
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+    <div class="header">
+        <div class="wrapper">
+          <div style="display:flex;">
+            <img src="images/buap_blue.png" alt="" >
+            <div style="display: flex;">
+              <img src="images/fccmin.png" alt="" style="width: 54px; height: 71px;">
+              <p style="margin-left:4px;color:#bde5ff;font-weight:600; align-self:center;">Facultad de <br>Cs. de la Computación</p>
+            </div>
+          </div>
+    
+          <nav class="menu" id="listMenu">
+            <li>
+              <a href="/">Inicio</a>
+            </li>
+            <li>
+              <a href="/teachers">Profesores</a>
+            </li>
+            <li>
+              <a href="/about">Nosotros</a>
+            </li>
+            <li>
+              <a href="/profile">Perfil</a>
+            </li>
+          </nav>
+          <span class="icon icon-menu" id="burguerMenu"></span>
+          
+        </div>
+    </div>
+    <div class="about">
+      Misión
+      <p>Como es que surgió está idea o porque estamos aquí</p>
+      Visíon
+      <p>Que es ese problema que queremos resolver, y cual es nuestra visión a largo plazo</p>
+    </div>
+    <script src="js/toggle.js"></script>
+</body>
+</html>

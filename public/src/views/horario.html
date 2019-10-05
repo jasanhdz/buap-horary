@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Horario</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+  .containergrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(1fr, 200px));
+    justify-content: center;
+    grid-template-rows: 1fr 1fr;
+    padding: 5px 10px 5px 0;
+    justify-content: center;
+    align-content: center;
+    /* overflow: auto; */
+  }
+  .item {
+    /* background-color: lightblue; */
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 3px;
+    /* overflow: auto; */
+    padding-left: 3px;
+  }
+  .item input {
+    width: 100%; 
+  }
+  .title {
+    background-color: #dada6a;
+  }
+  .title p {
+    color: white;
+  }
+  .gridinfo {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 120px);
+  }
+  .gridinfo p {
+    padding: 0;
+    margin: 2px;
+  }
+  .btn.green {
+    background-color: #8bdc03;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .input {
+    border: 1px solid #d7d6d6;
+    border-radius: 4px;
+    outline: none;
+    width: auto;
+    margin-top: 10px;
+    font-size: 1.4em;
+  }
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+  }
+  .data {
+    display: flex;
+    /* width: 800px; */
+    flex-direction: column;
+    margin: 2px;
+    border: 1px solid blue;
+    justify-content: space-evenly;
+    border-radius: 6px;
+    }
+  .p {
+    background-color: #add8e673;
+    /* border: 1px solid red; */
+    margin: 0;
+    width: auto;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 4px 10px;
+  }
+  .btn {
+    transition: .2s;
+    will-change: transform;
+  }
+  .btn.delete:active {
+    transform: scale(.9);
+  }
+  .btn.green:active {
+  transform: scale(.95);
+} 
+  .delete {
+    align-self: center;
+    background-color: #ff5757;
+    color: white;
+    margin:0;
+    height: 30px;
+    width: 100%;
+  }
+  @media screen and (max-width: 550px) { 
+    .containergrid {
+      grid-template-columns: repeat(2, minmax(100px, 200px));
+      grid-gap: 1px 18px;
+      overflow: auto;
+    }
+    .btn.green {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    .input {
+      height: 30px;
+      font-size: 1.2em;
+    }
+    .data {
+      width: 90%;
+      margin-bottom: 4px;
+    }
+  }
+  @media screen and (max-width: 430px) {
+    .containergrid {
+      grid-template-columns: repeat(2, minmax(100px, 150px));
+      padding: 5px 10px;
+    }
+    .input {
+      /* height: 100%; */
+      font-size: 1.2em;
+    }
+  }
+  </style>
+</head>
+<body id="body">
+  <h1>
+      Actualizar Horario
+  </h1>
+  <div class="containergrid">
+    <div class="item"> 
+      <label for="Titulo">Titulo:</label>
+      <input class="input" value="Fisica I" type="text" name="titulo" id="">
+    </div>
+    <div class="item">
+      <label for="Edificio">Edificio:</label>
+      <input class="input" value="C05" type="text" name="edificio" id="">
+    </div>
+    <div class="item">
+        <label for="Salon">Salón:</label>
+        <input class="input" value="202" type="text" name="salon" id="">
+    </div>
+    <div class="item">
+      <label for="Tipo">Tipo:(Clase, Asesoria, otros)</label>
+      <input class="input" value="Clase" type="text" name="tipo" id="">
+    </div>
+    <div class="item">
+      <label for="NRC">NRC:</label>
+      <input class="input" value="1020" type="text" name="nrc" id="">
+    </div>
+    <div class="item">
+      <label for="Dia">Día:
+        <p style="font-size:0.6em; margin:0;">
+          1 = Lunes, 2 = Martes , 3 = Miercoles, 4 = Jueves, 5 = Viernes, 6 = Sabado, 7 = Domingo 
+        </p></label>
+      <input class="input" value="1" type="number" min="1" max="7" name="dia" id="">
+    </div>
+    <div class="item">
+        <label for="Inicio">Hora inicio:</label>
+        <input class="input" value="7:00" type="text" name="inicio" id="">
+    </div>
+    <div class="item">
+      <label for="Final">Hora final:</label>
+      <input class="input" value="10:59" type="text" name="fin" id="">
+    </div>
+    <div class="item">
+      <label for="Seccion">Seccion:</label>
+      <input class="input" value="101" type="text" name="seccion" id="">
+    </div>
+    <button class="btn green" onclick="toggle();">Enviar</button>
+  </div>
+  <p id="p"></p>
+  <div class="content" id="content">
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+  <script>
+    $.ajax('/horarydata', {
+      'method': "GET",
+      'success': function(data) {
+        console.log(data);
+      },
+      'error': function(error) {
+        console.log(error);
+      }
+    })
+  </script>
+    <script> 
+    const $body = document.querySelector('body');
+    const $delete = document.getElementsByClassName('btn delete');
+    const $content = document.getElementById('content');
+    const $p = document.getElementById('p'); 
+    const $data = document.getElementsByClassName('data');
+    // async function load() {
+    //   const response = await fetch('horarydata');
+    //   console.log(response);
+    //   const data = await response.json();
+    //   console.log($data);
+    // }
+    async function load() {
+
+       async function getData(url) {
+          const response = await fetch(url);
+          const data = await response.json();
+          console.log(response.json());
+          return data;
+        }
+      const registro = await getData('/horarydata');
+      console.log('registros', registro);
+      
+      
+      
+      function registryTemplate(tipo, act, nrc, edf, sala, day, init, fin, sec, id) {
+        let dias = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
+        return (
+      `
+      <div class="data">
+      <p class="p">
+        <strong>Titulo:</strong> ${act}, <strong>Edificio:</strong> ${edf}, <strong>Salón:</strong> ${sala}<br>
+        <strong>Tipo:</strong> ${tipo}, <strong>NRC:</strong> ${nrc}, <strong>Día:</strong> ${dias[day-1]}, <br> 
+        <strong>Inicio:</strong> ${init}hrs, <strong>Final:</strong> ${fin}hrs, <strong>Seccion:</strong> ${sec}
+      </p>
+      <button class="btn delete" id="btn" ondblclick="myfunction(${id});">Eliminar</button>
+    </div>`
+      );
+    }
+      
+      registro.forEach(element => {
+        // console.log(element.actividad);
+        const HTMLString = registryTemplate(
+          element.tipo, element.actividad, element.nrc,
+          element.edificio, element.salon, element.dia,
+          element.inicio, element.fin, element.section, element.id
+        );
+        const html = document.implementation.createHTMLDocument();
+        html.body.innerHTML = HTMLString;
+        // debugger;
+        $content.append(html.body.children[0]);
+        // console.log(HTMLString);
+      });
+    }
+    
+    load();
+    // Delete
+    function myfunction(id) { 
+      const data = new URLSearchParams();
+      data.append('id', id);
+      console.log(data);
+      fetch('/delete', {
+        method: 'POST',
+        body: data
+      })
+      .then(() => {
+        console.log('parece que anda bien');
+        console.log(data);
+        for(let i = 0; i < $data.length; i++) {
+        $data[i].remove();
+        }
+        for(let i = 0; i < $data.length; i++) {
+          $data[i].remove();
+        }
+        for(let i = 0; i < $data.length; i++) {
+          $data[i].remove();
+        }
+        load();          
+      })
+      .catch(() => {
+        console.log('Nada está bien');
+      })
+      
+    }
+      function toggle() {
+        const $inputs = document.getElementsByClassName('input');
+        const data = new URLSearchParams();
+        for(let i = 0; i < $inputs.length; i++) {
+          if($inputs[i].value !== '') {
+            console.log($inputs[i].name);  
+            data.append($inputs[i].name, $inputs[i].value.toUpperCase());
+            $p.textContent = "Ready";
+            for(let i = 0; i < $data.length; i++) {
+              $data[i].remove();
+            }
+          }
+          
+          if($inputs[i].value == '') {
+            $p.textContent = "Necesitas llenar todos los campos para enviar el formulario";
+            for(let i = 0; i < $data.length; i++) {
+              $data[i].remove();
+            }
+          }
+          // $inputs[i].value = null;
+        }
+        fetch('/addhorary', {
+              method: 'POST',
+              body: data
+            })
+            .then(() => {
+              console.log("todo está ok");
+              console.log(data);
+              load();  
+            })
+            .catch(() => {
+              console.log('algo salió mal');
+            })
+      } 
+      
+    // console.log(registryTemplate('Clase', 'Fisica', '1023', 'C1', '101', 'jueves', '10:00', '11:59', '101')); 
+    </script>
+</body>
+</html>

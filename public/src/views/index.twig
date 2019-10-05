@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  {# <style>
+  @font-face{font-family:icomoon;src:url(../fonts/icomoon.eot?apyikb);src:url(../fonts/icomoon.eot?apyikb#iefix) format('embedded-opentype'),url(../fonts/icomoon.ttf?apyikb) format('truetype'),url(../fonts/icomoon.woff?apyikb) format('woff'),url(../fonts/icomoon.svg?apyikb#icomoon) format('svg');font-weight:400;font-style:normal}[class*=" icon-"],[class^=icon-]{font-family:icomoon!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-user:before{content:"\e900"}.icon-headphones:before{content:"\e910"}.icon-cart:before{content:"\e93a"}.icon-lifebuoy:before{content:"\e941"}.icon-user1:before{content:"\e971"}.icon-search:before{content:"\e986"}.icon-menu:before{content:"\e9bd"}.icon-arrow-left:before{content:"\ea38"}body{margin:0;font-family:sans-serif}.header{width:100%;background-color:#00395e;height:77px;display:flex;align-items:center;justify-content:center;position:fixed;z-index:3}.wrapper{padding:0 20px;width:1100px;height:100%;display:flex;align-items:center;justify-content:space-between}.menu{display:flex;justify-content:flex-end;align-items:center;height:100%}.menu li{cursor:pointer;display:block;text-align:center;line-height:77px;height:100%;padding:0 10px}.menu li a{display:inherit;width:inherit;height:100%}.menu li:hover{background-color:#00f}.icon{display:none;color:#fff;font-size:2em}.welcome{width:100%;height:auto;justify-content:center;display:flex}.welcome-container{margin:25px;padding:0 40px;max-width:900px;justify-content:center;flex-direction:column}.welcome-title{font-size:2.5em}.welcome-sub{font-size:1.7em}.teacher-img{max-width:100%}.container{padding:20px 0;display:flex;flex-direction:column;max-height:700px;align-items:center;padding-top:77px}.container.open{height:80vh;margin-bottom:10px;justify-content:center}.login{margin:10px;width:500px;display:flex;flex-direction:column;padding:10px 0}.btn,.login input{margin:12px 0;height:40px;border:none;font-size:17px;outline:0}.btn.second{color:#fff;padding:20px 0;background:#188fff;width:100%;display:flex;justify-content:center;align-items:center;margin:0;font-size:1.5em}.btn.second:hover{background-color:#60758a}.login input{padding:0 0 2px 12px;border-bottom:1px solid #cfd2d5}.login input::placeholder{color:#cfd2d5}input:focus{border-bottom:2px solid #188fff}.btn{border-radius:4px;height:40px;cursor:pointer}.btn.primary{background-color:#188fff;color:#fff}.btn.acount{width:300px;border:2px solid #188fff;text-align:center;line-height:40px}a{text-decoration:none;color:#188fff}.login.registro{width:550px;padding:0 12px;height:480px}.info{margin-top:20px;text-align:center}.info p{margin-bottom:0}.form-group{display:flex}.form-group input{width:51%}.form-group input:first-child{margin-right:10px}.desc{font-size:.8em;color:#979ba7;text-align:center}.span-focus{color:#188fff}.footer{height:250px;background-color:#00395e}.portada{padding-top:77px;display:flex;justify-content:center;align-items:center;height:400px;flex-wrap:wrap;background-image:url(../images/background.jpg);object-fit:cover;background-size:cover;background-repeat:no-repeat}.portada h1{padding:10px;font-size:2em;border-radius:8px;color:#fff;background-color:rgba(4,5,35,.78)}.footer{display:flex;justify-content:space-evenly;color:#fff;height:auto}.form{display:inherit;flex-wrap:wrap;width:1100px;justify-content:space-around}.item{max-width:300px}.logos{display:inherit;justify-content:center;flex-wrap:wrap}.logos p{font-size:.9em}.information{display:inherit;flex-direction:column;align-items:flex-start}.information p{margin-bottom:30px}.information p,label{padding-left:5px}.information input{width:85%;font-size:1.2em;border-color:gray;border-style:solid;border-radius:3px;padding:10px 20px 5px 5px;outline:0;border:none;margin-bottom:15px}.email{margin-left:-64px}.direction{padding:0 25px;text-align:justify}.description{display:inherit;flex-direction:column}.btn.sbm{color:#fff;background:linear-gradient(to left,#fe344e,#ff7250)}.hello-title{border-bottom:2.2px solid #979ba7;padding-bottom:7px;text-align:center;width:90%;margin-bottom:0}.menuList,.teacher,.teacher li{width:92%}.teacher{border:1px solid;border-radius:4px;padding:5px 0}.teacher-info{display:none}.teacher-info p{margin:0;padding:0 10px}.teacher li{padding:2.5px 10px;display:inline-block;color:#188fff}.clase{color:#00395e;font-size:1.9em;width:auto}.hour{font-weight:600}.day{display:none}.weekend{display:none}.list.w{color:red}.teacher-info .list{border:1px solid;margin-left:1px;cursor:pointer}.teacher-title{cursor:pointer}.active{display:initial}@media screen and (max-width:900px){.form{justify-content:center;align-items:center}}@media screen and (max-width:768px){.login.registro{max-width:350px}.login{max-width:350px}.portada{background-position-x:center;background-position-y:20px;background-position-y:76px;height:300px}.teacher-img{max-width:100%;max-height:300px}.icon{display:flex;cursor:pointer}.icon-menu{height:100%;width:70px;display:flex;justify-content:center;align-items:center}.menu{display:none}.menu.active{width:100%;background-color:rgba(28,54,67,.9);z-index:2;display:flex;position:fixed;flex-direction:column;top:77px;right:0;justify-content:flex-start;align-items:flex-start}.menu li{height:auto;text-align:initial;display:flex;justify-content:flex-start;width:100%;margin-left:40px}.menu li:hover{background-color:unset}.menu li:hover a{color:red;transition:.3s}}@media screen and (max-width:670px){.welcome-container{padding:0 20px}.welcome-title{font-size:1.8em}.welcome-sub{font-size:1.2em}.btn.second{font-size:1.2em}}@media screen and (max-width:530px){.header{font-size:.8em}.information input{width:92%}.item{width:100%}.information p{align-self:center}.teacher-img{max-height:200px}}@media screen and (max-width:380px){.logos{order:3}.information{order:1}.description{order:2}.teacher-img{max-height:120px}.welcome-title{font-size:1.4em;text-align:center}.welcome-sub{font-size:.9em;text-align:justify}.btn.second{text-align:center;font-size:.7em;height:20px}.link{text-align:center;line-height:23px;font-size:.9em}.underline{padding-bottom:2px;border-bottom:1px dashed red}.welcome-container{padding:0 5px}.portada h1{font-size:1.2em}.item{max-width:230px}.email{margin-left:0}.direction{padding:0}}
+  </style> #}
+</head>
+<body>
+  <div class="header">
+    <div class="wrapper">
+      <div style="display:flex;">
+        <img src="images/buap_blue.png" alt="" >
+        <div style="display: flex;">
+          <img src="images/fccmin.png" alt="" style="width: 54px; height: 71px;">
+          <p style="margin-left:4px;color:#bde5ff;font-weight:600; align-self:center;">Facultad de <br>Cs. de la Computación</p>
+        </div>
+      </div>
+
+      <nav class="menu" id="listMenu">
+        <li>
+          <a href="/">Inicio</a>
+        </li>
+        <li>
+          <a href="/teachers">Profesores</a>
+        </li>
+        <li>
+          <a href="/about">Nosotros</a>
+        </li>
+        <li>
+          <a href="/profile">Perfil</a>
+        </li>
+      </nav>
+      <span class="icon icon-menu" id="burguerMenu"></span>
+      
+    </div>
+  </div>
+  <section class="portada">
+    <h1 id="h1animation">Horario de Profesores</h1>
+  </section>
+  <div class="welcome">
+    <div class="welcome-container">
+        <h1 class="welcome-title"><span style="color: #4caf50; text-decoration-line:underline;">¡Bienvenido!</span> Nos da mucho gusto tenerte por aquí...</h1>
+        <p class="welcome-sub">"Aquí podras ver el Horario a detalle de los Profesores 
+          de la Facultad de Ciencias de la Computación(FCC)"
+        </p>
+        <div style="display: flex;width: 100%;justify-content: center;">
+          <img  class="teacher-img" src="images/profesorado.png" alt="">
+        </div>
+        <p class="link"><span class="underline">Consulta la lista de Maestros registrados Aquí: </span></p>
+        <a href="/teachers"><p class="btn second">
+          Maestros
+        </p></a>
+    </div>
+  </div>
+  <footer class="footer">
+    <form action="" class="form">
+      <div class="item logos">
+        <div style="height:90px;display:inherit;align-items:center;">
+          <img src="images/logo_buap.png" alt="" width="170px" height="45px">
+        </div>
+        <img src="images/fccmin.png" alt="" width="25%" height="30%">
+        <p class="direction">Facultad de Cs. de la Computación
+            14 Sur y Av. San Claudio C.P.
+            Puebla, Puebla, México
+        </p>
+        <p class="email">Email:<br> profesorsfcc@buap.com.mx </p>
+      </div>
+      <div class="item information">
+        <p>Boletin</p>
+        <label for="name">Nombre</label>
+        <input type="text" name="name">
+        <label for="email">Email</label>
+        <input type="email" name="email">
+      </div>
+      <div class="item description">
+        <p>Comentarios</p>
+        <textarea name="comentarios" id="" cols="30" rows="10"></textarea>
+        <button class="btn sbm" type="submit">Enviar</button>
+      </div>
+    </form>
+  </footer>
+  <script src="js/toggle.js"></script>
+</body>
+</html>

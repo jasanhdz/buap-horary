@@ -1,0 +1,22 @@
+.portada h1 {
+  animation: pulso .3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  will-change: opacity;
+  -webkit-animation: pulso 3s alternate infinite;
+}
+
+@keyframes pulso {
+  0% {
+    opacity: .1;
+  }
+  30% {
+    opacity: .8;     
+  }
+  80% {
+    opacity: .8;
+  } 
+  100% {
+    opacity: .1;
+  }
+}

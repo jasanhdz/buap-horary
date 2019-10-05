@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/style.css">
+	<style>
+	.box-message {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 50px;
+  }
+  .validation {
+    border-radius: 8px;
+    text-align:center;
+    width: auto;
+    height: auto;
+    background-color: lightblue;
+  }
+	</style>
+</head>
+<body>
+    <div class="header">
+        <div class="wrapper">
+          <div style="display:flex;">
+            <img src="images/buap_blue.png" alt="" >
+            <div style="display: flex;">
+              <img src="images/fccmin.png" alt="" style="width: 54px; height: 71px;">
+              <p style="margin-left:4px;color:#bde5ff;font-weight:600; align-self:center;">Facultad de <br>Cs. de la Computación</p>
+            </div>
+          </div>
+    
+          <nav class="menu" id="listMenu">
+            <li>
+              <a href="/">Inicio</a>
+            </li>
+            <li>
+              <a href="/teachers">Profesores</a>
+            </li>
+            <li>
+              <a href="/about">Nosotros</a>
+            </li>
+            <li>
+                <a href="/profile">Perfil</a>
+            </li>
+          </nav>
+          <span class="icon icon-menu" id="burguerMenu"></span>
+          
+        </div>
+    </div>
+
+  <div class="container open">
+  <section class="box-message">
+      <div class="validation">
+      <p> {{ responseMessage }} </p>
+      </div>
+    </section>
+
+    <p>Iniciar Sesión</p>
+    <form action="/auth" class="login" method="POST">
+      <input type="text" name="matricula" id="" autocurrect="none" autofocus="true" autocomplete="username" placeholder="Introduce tu matricula">
+      <input type="password" name="password" id="" placeholder="Contraseña">
+        <button type="submit" class="btn primary">Siguiente</button>
+    </form>
+    <p style="margin-top:0;"><a href="">¿Tienes problemas para Iniciar sesión?</a></p>
+    <p class="btn acount"><a href="/registry">Crear cuenta</a></p>
+  </div>
+  <footer class="footer">
+      <form action="" class="form">
+        <div class="item logos">
+          <div style="height:90px;display:inherit;align-items:center;">
+            <img src="images/logo_buap.png" alt="" width="170px" height="45px">
+          </div>
+          <img src="images/fccmin.png" alt="" width="25%" height="30%">
+          <p class="direction">Facultad de Cs. de la Computación
+              14 Sur y Av. San Claudio C.P.
+              Puebla, Puebla, México
+          </p>
+          <p class="email">Email:<br> profesorsfcc@buap.com.mx </p>
+        </div>
+        <div class="item information">
+          <p>Boletin</p>
+          <label for="name">Nombre</label>
+          <input type="text" name="name">
+          <label for="email">Email</label>
+          <input type="email" name="email">
+        </div>
+        <div class="item description">
+          <p>Comentarios</p>
+          <textarea name="comentarios" id="" cols="30" rows="10"></textarea>
+          <button class="btn sbm" type="submit">Enviar</button>
+        </div>
+      </form>
+    </footer>
+  <script src="js/toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Profile</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+  <div class="header">
+    <div class="wrapper">
+      <div style="display:flex;">
+        <img src="images/buap_blue.png" alt="" >
+        <div style="display: flex;">
+          <img src="images/fccmin.png" alt="" style="width: 54px; height: 71px;">
+          <p style="margin-left:4px;color:#bde5ff;font-weight:600; align-self:center;">Facultad de <br>Cs. de la Computación</p>
+        </div>
+      </div>
+
+      <nav class="menu" id="listMenu">
+        <li>
+          <a href="/">Inicio</a>
+        </li>
+        <li>
+          <a href="/teachers">Profesores</a>
+        </li>
+        <li>
+          <a href="/about">Nosotros</a>
+        </li>
+        <li>
+            <a href="/logout">Logout</a>
+        </li>
+      </nav>
+      <span class="icon icon-menu" id="burguerMenu"></span>
+      
+    </div>
+  </div>
+  <div class="header-profile">
+    <div class="wrapper-profile">
+      <div class="dashboard">
+        <h2>Dashboard</h2>
+        <a href="/addhorary"><span class="iconthis icon-addthis"></span></a>
+      </div>
+      <div class="profile">
+        <div class="picture-profile">
+          <img src="images/profile.jpg" alt="" width="70" height="70">
+        </div>
+        <div class="profile-desc">
+          <h2>Buenos Días {{ user.name }} {{ user.lastName }}</h2>
+          <p>Dependienta | Atención al Cliente</p>
+        </div>
+      </div>
+      <div class="avisos">
+        <p class="overflow">Necesitas revisar 2 fichajes antes de 10 días</p>
+        <p class="overflow">Tus vacaciones caducan en 20 días</p>
+      </div>
+    </div>
+  </div>
+  <div class="jornada">
+    <div class="wrapper-profile">
+      <p class="overflow">Tu Jornada</p>
+      <p class="center gray overflow">Turno General(8h)</p>
+      <p class="center overflow">Horario <br>
+        <span>07:00 - 15:00</span>
+      </p>
+      <p class="center overflow">
+        Oficina <br>
+        <span>C.C La Maquinista, Barcelona</span>
+      </p>
+      <button class="btn primary">Firmar</button>
+    </div>
+  </div>
+  <div class="enterprise-event">
+    <div class="wrapper-profile">
+      <p class="overflow"><span class="icont icon-download"></span> Evento Empresa</p>
+      <p class="center overflow">Descripción  <br>
+      <span>Formación: Como mejorar el funel de ventas</span>
+      </p>
+    </div>
+  </div>
+  <div class="target">
+    <div class="wrapper-profile">
+      <p class="overflow"><span class="icont birthday icon-birthday-cake"></span> Cumpleaños</p>
+      <p class="center overflow">Hoy es el Cumpleaños de: <br>
+      <span>Ana Pérez, Juan Casado, Miriam García</span>
+      </p>
+    </div>
+  </div>
+  <div class="target">
+    <div class="wrapper-profile">
+      <div class="calendar">
+        <a href="#" class="overflow">
+          <p>Ver Próximos Eventos</p>
+        </a>
+        <p><span class="icont items icon-calendar"></span></p> 
+      </div>
+    </div>
+  </div>
+  <div class="target">
+    <div class="wrapper-profile">
+      <div class="calendar">
+        <a href="#" class="overflow">
+          <p>Hacer una Solicitud</p>
+        </a>
+        <p><span class="icont items icon-airplane"></span></p> 
+      </div>
+    </div>
+  </div>
+  <div class="target b">
+    <div class="wrapper-profile">
+      <p class="overflow">MI TIEMPO</p>
+      <div class="my-time">
+        <div class="time">
+          <p class="overflow">Fichaje Puntual</p>
+          <p class="num time-num">89%</p>
+          <p class="num">puntual</p>
+        </div>
+        <div class="time">
+          <p class="overflow">Ausencias no planificadas</p>
+          <p class="num time-num">23</p>
+          <p class="num">horas</p> 
+        </div>
+        <div class="time">
+          <p class="overflow">Horas trabajadas esté mes</p>
+          <div class="content">
+            <p class="time-num num">1217</p>
+            <div class="porcent"></div>
+          </div>
+            <p class="num b">de 2080 horas</p>
+        </div>
+        <div class="time">
+          <p class="overflow">Vacaciones disfrutadas</p>
+          <div class="content">
+            <p class="num time-num">12</p>
+            <div class="porcent b"></div>
+          </div>
+
+          <p class="num">de 35 dias</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/toggle.js"></script>
+</body>
+</html>

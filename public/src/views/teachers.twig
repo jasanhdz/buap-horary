@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Docentes</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            .weekend-info {
+                display: none;
+            }
+            .weekend-info.activar {
+                display: flex;
+            }
+            .list.day {
+                border-color: none;
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="wrapper">
+                <div style="display:flex;">
+                    <img src="images/buap_blue.png" alt="">
+                    <div style="display: flex;">
+                        <img src="images/fccmin.png" alt="" style="width: 54px; height: 71px;">
+                        <p style="margin-left:4px;color:#bde5ff;font-weight:600; align-self:center;">Facultad de
+                            <br>Cs. de la Computación</p>
+                    </div>
+                </div>
+
+                <nav class="menu" id="listMenu">
+                    <li>
+                        <a href="/">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="/teachers">Profesores</a>
+                    </li>
+                    <li>
+                        <a href="/about">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="/registry">Registro</a>
+                    </li>
+                    <li>
+                        <a href="/profile">Perfil</a>
+                    </li>
+                </nav>
+                <span class="icon icon-menu" id="burguerMenu"></span>
+
+            </div>
+        </div>
+        <div class="container">
+            <p class="hello-title">¡Hola! Buenos Días {{ usersesion.name }} {{ usersesion.lastName }}</p>
+            <p id="datetoday"></p>
+            <p style="width: 90%;font-weight: 600;">Lista de profesores registrados hasta el día de hoy:</p>
+            <nav class="menuList">
+              {% for users in user %}
+                <div class="teacher">
+                  <li class="teacher-title" id="teacher">{{ users.name }}
+                      {{users.lastName}}
+                  </li>
+                  <div class="teacher-info" id="teacher-options">
+                    <p>Docente FCC</p>
+                    <li class="list list-day" id="list-day">Horario del Día:
+                        Today
+                    </li>
+                    <div class="itm day" id="Hour-day">
+                        {% for dias in dia %}
+                          {% if dias is not empty %}
+                              {% if dias.id_user == users.id %}
+                                
+                                  <p class="clase">
+                                      <span class="hour">
+                                          {{ dias.inicio }}hrs</span>Titulo:
+                                      {{dias.actividad}}
+                                  </p>
+                                  <p class="teacher-desc">hasta las:
+                                      {{ dias.fin }}
+                                      hrs., en el salón:
+                                      {{ dias.salon }}
+                                      edificio:
+                                      {{dias.edificio}}<br>
+                                      NRC:
+                                      {{ dias.nrc }}
+                                      |
+                                      {{dias.tipo}}
+                                  </p>
+                              {% endif %}
+                              {% else %}
+                                <p class="clase">No tiene ningún evento programado para el día de hoy.</p>
+                        {% endif %}    
+                      {% endfor %}
+
+
+                      {# {% endif %} #}
+                    </div>
+                    <li class="list list-weekend" id="hour-weekend">Horario Semanal</li>
+                      <div class="itm weekend" id="weekend">
+                        <li class="list day">Lunes</li>
+                        <div class="weekend-info">
+                        {% for datas in data %}
+                          {% if datas.id_user == users.id %}
+                            {% if datas.dia == 1 %}
+                              <div class="clase-content">
+                                <p class="clase">
+                                  <span class="hour">{{ datas.inicio }}hrs</span> Titulo: {{ datas.actividad }}
+                                </p>
+                                <p class="teacher-desc">
+                                  hasta las: {{ datas.fin }} hrs., en el salón: {{ datas.salon }}
+                                  edificio: {{datas.edificio}}<br>
+                                  NRC: {{ datas.nrc }} | {{datas.tipo}}
+                                </p>
+                              </div>
+                            {% endif %} 
+                          {% endif %}
+                        {% endfor %}
+                        </div>
+                        <li class="list day">Martes</li>
+                        <div class="weekend-info">
+                        {% for datas in data %}
+                          {% if datas.id_user == users.id %}
+                            {% if datas.dia == 2 %}
+                              <div class="clase-content">
+                                <p class="clase">
+                                  <span class="hour">{{ datas.inicio }}hrs</span> Titulo: {{ datas.actividad }}
+                                </p>
+                                <p class="teacher-desc">
+                                  hasta las: {{ datas.fin }} hrs., en el salón: {{ datas.salon }}
+                                  edificio: {{datas.edificio}}<br>
+                                  NRC: {{ datas.nrc }} | {{datas.tipo}}
+                                </p>
+                              </div>
+                            {% endif %} 
+                          {% endif %}
+                        {% endfor %}
+                        </div>
+                        <li class="list day">Miercoles</li>
+                        <div class="weekend-info">
+                        {% for datas in data %}
+                          {% if datas.id_user == users.id %}
+                            {% if datas.dia == 3 %}
+                            <div class="clase-content">
+                              <p class="clase">
+                                <span class="hour">{{ datas.inicio }}hrs</span> Titulo:{{ datas.actividad }}
+                              </p>
+                              <p class="teacher-desc">
+                                hasta las: {{ datas.fin }} hrs., en el salón: {{ datas.salon }}
+                                edificio: {{datas.edificio}}<br>
+                                NRC: {{ datas.nrc }} | {{datas.tipo}}
+                              </p>
+                            </div>
+                            {% endif %} 
+                          {% endif %}
+                        {% endfor %}
+                        </div>
+                        <li class="list day">Jueves</li>
+                        <div class="weekend-info">
+                        {% for datas in data %}
+                          {% if datas.id_user == users.id %}
+                            {% if datas.dia == 4 %}
+                              <div class="clase-content">
+                                <p class="clase">
+                                  <span class="hour">{{ datas.inicio }}hrs</span> Titulo:{{ datas.actividad }}
+                                </p>
+                                <p class="teacher-desc">
+                                  hasta las: {{ datas.fin }} hrs., en el salón: {{ datas.salon }}
+                                  edificio: {{datas.edificio}}<br>
+                                  NRC: {{ datas.nrc }} | {{datas.tipo}}
+                                </p>
+                              </div>
+                            {% endif %} 
+                          {% endif %}
+                        {% endfor %}
+                        </div>
+                        <li class="list day">Viernes</li>
+                        <div class="weekend-info">
+                        {% for datas in data %}
+                          {% if datas.id_user == users.id %}
+                            {% if datas.dia == 5 %}
+                            <div class="clase-content">
+                              <p class="clase">
+                                <span class="hour">{{ datas.inicio }}hrs</span> Titulo: {{ datas.actividad }}
+                              </p>
+                              <p class="teacher-desc">
+                                hasta las: {{ datas.fin }} hrs., en el salón: {{ datas.salon }}
+                                edificio: {{datas.edificio}}<br>
+                                NRC: {{ datas.nrc }} | {{datas.tipo}}
+                              </p>
+                            </div>
+                            {% endif %} 
+                          {% endif %}
+                        {% endfor %}
+                        </div>
+                        <li class="list day">Sabado</li>
+                        <div class="weekend-info">
+                        {% for datas in data %}
+                          {% if datas.id_user == users.id %}
+                            {% if datas.dia == 6 %}
+                            <div class="clase-content">
+                              <p class="clase">
+                                <span class="hour">{{ datas.inicio }}hrs</span> Titulo:{{ datas.actividad }}
+                              </p>
+                              <p class="teacher-desc">
+                                hasta las: {{ datas.fin }} hrs., en el salón: {{ datas.salon }}
+                                edificio: {{datas.edificio}}<br>
+                                NRC: {{ datas.nrc }} | {{datas.tipo}}
+                              </p>
+                            </div>
+                            {% endif %} 
+                          {% endif %}
+                        {% endfor %}
+                        </div>
+                        <li class="list day">Domingo</li>
+                        <div class="weekend-info">
+                        {% for datas in data %}
+                          {% if datas.id_user == users.id %}
+                            {% if datas.dia == 7 %}
+                            <div class="clase-content">
+                              <p class="clase">
+                                <span class="hour">{{ datas.inicio }}hrs</span> Titulo: {{ datas.actividad }}
+                              </p>
+                              <p class="teacher-desc">
+                                hasta las: {{ datas.fin }} hrs., en el salón: {{ datas.salon }}
+                                edificio: {{datas.edificio}}<br>
+                                NRC: {{ datas.nrc }} | {{datas.tipo}}
+                              </p>
+                            </div>
+                            {% endif %} 
+                          {% endif %}
+                        {% endfor %}
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </nav>
+        </div>
+        <script>
+            const $listDay = document.getElementsByClassName('list day');
+            const $wekendInfo = document.getElementsByClassName('weekend-info');
+
+            for (let i = 0; i < $listDay.length; i++) {
+                $listDay[i].addEventListener('click', (event) => {
+                    console.log('hiciste click');
+                    $wekendInfo[i].classList.toggle('activar');
+                })
+
+            }
+        </script>
+        <script src="js/toggle.js"></script>
+        <script src="js/touch.js"></script>
+    </body>
+</html>
